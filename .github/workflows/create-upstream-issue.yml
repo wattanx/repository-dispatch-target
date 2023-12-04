@@ -1,0 +1,13 @@
+name: create upstream issue
+on:
+  repository_dispatch:
+    types: [target-updated]
+jobs:
+  upstream-issue:
+    name: copy target.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: log
+        run: echo ${{ github.event.client_payload.ref }}
