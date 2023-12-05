@@ -12,4 +12,4 @@ jobs:
       - name: ref
         run: echo ${{ github.event.client_payload.ref }}
       - name: event
-        run: echo ${{ github.event.client_payload.event }}
+        run: echo ${{ github.event.client_payload.event.compare }}
