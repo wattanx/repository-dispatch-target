@@ -4,10 +4,12 @@ on:
     types: [target-updated]
 jobs:
   upstream-issue:
-    name: copy target.yml
+    name: upstream issue
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: log
+      - name: ref
         run: echo ${{ github.event.client_payload.ref }}
+      - name: event
+        run: echo ${{ github.event.client_payload.event }}
