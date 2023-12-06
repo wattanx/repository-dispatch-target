@@ -13,10 +13,12 @@ jobs:
         id: set-result
         with:
           script: |
-            github.request('GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls', {
+            const res = await github.request('GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls', {
               owner: 'wattanx',
               repo: 'repository-dispatch-owner',
               commit_sha: '${{ github.event.client_payload.sha }}',
             })
+            console.log(res)
+            return res
       - name: log result
         run: echo "${{steps.set-result.outputs.result}}"
