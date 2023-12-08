@@ -32,7 +32,7 @@ jobs:
               owner: 'wattanx',
               repo: 'repository-dispatch-target',
               title: 'Need to port from upstream',
-              labels: ['upstream']
+              labels: ['upstream'],
               body: `## Pull Request
               - [ ] ${{steps.set-result.outputs.result}}`,
             })
