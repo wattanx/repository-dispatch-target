@@ -22,3 +22,14 @@ jobs:
             return data[0].html_url
       - name: log result
         run: echo "${{steps.set-result.outputs.result}}"
+      - name: create issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.issues.create({
+              owner: 'wattanx',
+              repo: 'repository-dispatch-upstream',
+              title: 'Need to port from upstream',
+              body: `## Pull Request
+              ${{steps.set-result.outputs.result}}`,
+            })
