@@ -28,7 +28,7 @@ jobs:
           script: |
             github.rest.issues.create({
               owner: 'wattanx',
-              repo: 'repository-dispatch-upstream',
+              repo: 'repository-dispatch-target',
               title: 'Need to port from upstream',
               body: `## Pull Request
               ${{steps.set-result.outputs.result}}`,
