@@ -2,6 +2,8 @@ name: create upstream issue
 on:
   repository_dispatch:
     types: [target-updated]
+permissions:
+  issues: write
 jobs:
   upstream-issue:
     name: upstream issue
