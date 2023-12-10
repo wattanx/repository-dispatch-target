@@ -33,6 +33,9 @@ jobs:
               repo: 'repository-dispatch-target',
               title: 'Need to port from upstream',
               labels: ['upstream'],
-              body: `## Pull Request
-              - [ ] ${{steps.set-result.outputs.result}}`,
+              body: `Upstream has been changed.
+              Please check the changes and port them.
+
+              ## Pull Request
+              - ${{steps.set-result.outputs.result}}`,
             })
