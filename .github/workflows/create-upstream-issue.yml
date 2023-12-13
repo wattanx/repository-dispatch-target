@@ -37,5 +37,5 @@ jobs:
               Please check the changes and port them.
 
               ## Pull Request
-              - ${{steps.set-result.outputs.result}}`,
+              - ${{github.event.client_payload.url}}`,
             })
